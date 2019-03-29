@@ -1,0 +1,26 @@
+{% extends 'computador/base.html' %} {% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Modelo</td>
+                    <th>Marca</th>
+                    <th>Preço</th>
+                    <th>Peso</td>
+                    <th>Linha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{computador.modelo}}</td>
+                    <td>{{computador.marca}}</td>
+                    <td>{{computador.preco}}</td>
+                    <td>{{computador.peso}} Kg</td>
+                    <td>{{computador.linha}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

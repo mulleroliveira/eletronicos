@@ -1,0 +1,27 @@
+{% extends 'computador/base.html' %} {% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <section class="panel">
+            <div class="panel-body">
+                <form role="form" action="/gestao/form/" method="POST">
+                    {% csrf_token %}
+                    {% for campo in form %}
+                    <div class="form-group">
+                        <label for="{{campo.id_for_label}}">{{campo.label}}</label>
+                        {{campo}}
+                        {% for error in campo.errors %}
+                        <div>
+                            <label for="">{{error}}</label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+
+            </div>
+        </section>
+    </div>
+</div>
+
+{% endblock %}

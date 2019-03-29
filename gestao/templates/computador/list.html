@@ -1,0 +1,33 @@
+{% extends 'computador/base.html' %} {% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Marca</th>
+                    <th>Preço</th>
+                    <th>
+                        <a href="/gestao/form/">
+                            <button type="button" class="btn btn-primary">Novo</button>
+                        </a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for computador in computadores %}
+                <tr>
+                    <td>{{computador.marca}}</td>
+                    <td>R$ {{computador.preco}}</td>
+                    <td>
+                        <a href="/gestao/detalhes/{{computador.id}}/">Detalhes</a>
+                        |
+                        <a href="/gestao/delete/{{computador.id}}/">Deletar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
